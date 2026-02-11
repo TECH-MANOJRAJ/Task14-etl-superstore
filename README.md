@@ -1,56 +1,29 @@
-# Task14-etl-superstore(Superstore Dataset)
+# ETL Mini Pipeline — Task 14
 
 ## 📌 Project Overview
 
-This project implements a mini **ETL (Extract → Transform → Load)** pipeline using the Superstore dataset. The goal is to simulate a real-world data engineering workflow by cleaning raw data, transforming it into structured tables, and exporting it as organized CSV files for analytics.
-
-This task demonstrates practical ETL skills used in modern data analytics pipelines.
-
----
-
-## 🧰 Tools & Technologies Used
-
-* **Python**
-* **Pandas**
-* **Google Colab / Jupyter Notebook**
-* **CSV file storage**
-* **GitHub** for version control
+This project implements a mini ETL (Extract → Transform → Load) pipeline using Python.
+The goal is to simulate a real-world data analytics workflow by cleaning raw data, transforming it, and storing structured outputs.
 
 ---
 
-## 🔄 ETL Workflow
+## 🛠 Tools & Technologies
 
-### 1. Extract
-
-* Loaded the raw Excel dataset (`superstore_dataset.xlsx`)
-* Saved a raw backup copy into the `raw/` folder
-
-### 2. Transform
-
-* Cleaned missing values
-* Removed duplicate rows
-* Standardized column names
-* Created derived column:
-
-  * `profit_margin = profit / sales`
-
-### 3. Load
-
-* Saved cleaned dataset as `processed_data.csv`
-* Split data into structured CSV tables:
-
-  * `customers.csv`
-  * `orders.csv`
-  * `products.csv`
+* Python
+* Pandas
+* SQLite
+* Google Colab / Jupyter Notebook
+* CSV files
 
 ---
 
 ## 📂 Project Folder Structure
 
 ```
-task14-etl/
+task14_etl/
 │
-│── superstore_raw.csv
+├── raw/
+│   └── raw_data.csv
 │
 ├── processed/
 │   └── processed_data.csv
@@ -60,45 +33,71 @@ task14-etl/
 │   ├── orders.csv
 │   └── products.csv
 │
-├── task14_etl.ipynb
-└── README.md
+├── database.sqlite
+└── task14_etl.ipynb
 ```
 
 ---
 
-## 📊 Key Outcomes
+## 🔄 ETL Workflow Steps
 
-* Built a working ETL pipeline from scratch
-* Practiced data cleaning and transformation
-* Structured data into normalized tables
-* Exported organized CSV outputs
-* Understood real-world analytics workflows
+### 1. Extract
+
+* Loaded dataset from CSV source
+* Saved raw copy in `raw/` folder
+
+### 2. Transform
+
+* Removed duplicates
+* Cleaned missing values
+* Standardized column names
+* Created derived columns:
+
+  * Profit margin
+  * High value customer flag
+
+### 3. Load
+
+* Split dataset into:
+
+  * Customers table
+  * Orders table
+  * Products table
+* Exported processed CSV files
+* Stored structured tables in SQLite database
 
 ---
 
-## 🎯 Learning Objectives Achieved
+## ✅ Validation
 
-* Understanding ETL concepts
-* Data preprocessing using Pandas
-* Creating reproducible data pipelines
-* Organizing datasets for analytics
-* GitHub project structuring
+* Verified row counts before and after transformation
+* Ensured clean and structured outputs
 
 ---
 
-## 🚀 How to Run the Project
+## 🎯 Final Outcome
 
-1. Upload the dataset to Google Colab or Jupyter Notebook
-2. Run all cells in `task14_etl.ipynb`
-3. Processed files will be generated in the project folders
+This project demonstrates how ETL pipelines are built in analytics workflows.
+It improves data cleaning, transformation, and database handling skills.
 
 ---
 
-## 📌 Conclusion
+## 🚀 How to Run
 
-This ETL pipeline shows how raw business data can be transformed into structured datasets ready for analysis. The workflow mirrors industry practices used in data analytics and engineering projects.
+1. Open `task14_etl.ipynb` in Google Colab or Jupyter
+2. Run all cells step-by-step
+3. Generated files will appear in project folders
+4. Upload project to GitHub
+
+---
+
+## 📎 Dataset Source
+
+Superstore retail dataset (CSV)
 
 ---
 
 ## 👨‍💻 Author
-MANOJRAJ G – Data Analyst Internship
+MANOJRAJ G
+
+Data Analyst Internship — Task 14
